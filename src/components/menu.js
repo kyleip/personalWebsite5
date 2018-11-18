@@ -1,209 +1,78 @@
-// example click handler for menu items
-const itemClick = (e) => {
-    console.log("clicked");
-  }
-  
-  // config for menu
-  const menuData = [
-    {
-      color: "#b3462f",
-      icon: "fa-paper-plane",
-      click: itemClick
-    },{
-      color: "#e78b38",
-      icon: "fa-pencil",
-      click: itemClick
-    },{
-      color: "#353535",
-      icon: "fa-trash",
-      click: itemClick
-    },{
-      color: "#303c54",
-      icon: "fa-tags",
-      click: itemClick
-    },{
-      color: "#3a384e",
-      icon: "fa-search",
-      click: itemClick
-    },{
-      color: "#78332c",
-      icon: "fa-users",
-      click: itemClick
+import React, {Component} from 'react';
+import { Button, Image } from 'semantic-ui-react';
+import './menu.css'
+
+
+export default class Menu extends Component {
+    constructor () {
+      super()
+      this.state = {
+        isExpanded: false
+      }
     }
-  ];
-  
-  export const MenuWrapper = React.createClass({
-    
-    getInitialState () {
-      return {
-        menuOpen: false,
-      };
-    },
-    
-    componentWillMount () {
-      this.makeMenu(menuData);
-    },
-    
-    // calculate angles and distance between menu items
-    // then set position on menu-item objects
-    makeMenu (menuConfig) {
-      const angle = 360 / menuConfig.length;
-      let rotation = 0;
-      let menuItems = [];
-      
-      menuConfig.forEach(({
-        color, 
-        icon, 
-        click
-      }) => {
-        menuItems.push({
-          color,
-          icon,
-          click,
-          rotation,
-          angle,
-          show: false
-        });
-        rotation += angle;
-      }); 
-      
+    toggleExpanded () {
       this.setState({
-        menuItems: menuItems
-      });
-    },
-    
-    toggleMenu () {
-      this.setState({
-        menuOpen: !this.state.menuOpen
-      });
-    },
-    
-    // staggerd fade menu items in
-    animateButtons () {
-      const length = this.state.menuItems.length;
-      
-      const stagger = (i) => {
-        if (i < length) {
-            setTimeout(() => {
-            let items = this.state.menuItems;
-            let showing = this.state.menuItems[i].show;
-            
-            this.setState({
-              menuItems: [
-                ...items.slice(0, i),
-                Object.assign({}, items[i], {
-                  show: !showing
-                }),
-                ...items.slice(i + 1)
-              ]
-            });
-            
-            stagger(i + 1);
-            
-          },60);
-        }
-      };
-      
-      stagger(0); 
-    },
-  
-      render () {
-      return (
-        <div>
-          <MenuToggle 
-            toggle={this.toggleMenu}
-            open={this.state.menuOpen}
-            animateButtons={this.animateButtons}
-          />
-          <Menu
-            size={18}
-            items={this.state.menuItems} 
-            open={this.state.menuOpen}
-          />
-        </div>
-      );
+        isExpanded: !this.state.isExpanded
+      })
     }
-  });
-  
-  const Menu = ({
-    size, 
-    items, 
-    toggle, 
-    open
-  }) => (
-    <div className={open 
-          ? "menu-wrapper-open" 
-          : "menu-wrapper-closed"}
-    >
-      <div className={"menu-background"}>
-        <MenuItems
-          size={size}
-          items={items} 
-          open={open}
-        />
-      </div>
-    </div>
-  );
-  
-  const MenuItems = ({
-    size, 
-    items, 
-    open
-  }) => {
-    const buttons = items.map((item) => {
-      const styling = {
-        transform:
-          `rotate(${item.rotation}deg) 
-           translate(${size/2}em) 
-           rotate(${-(item.rotation)}deg)`,
-        backgroundColor: item.color
-      };
-      
-      return (
-        <div 
-          className={item.show 
-            ? "menu-item item-show" 
-            : "menu-item item-hide"}
-          style={styling}
-          onClick={item.click}
-        >
-          <i className={"fa " + item.icon}
-             aria-hidden="true"
-          ></i>
-        </div>
-      );
-    });
     
-    return (
-      <div 
-        className={open 
-          ? "button-bg animate-menu" 
-          : "button-bg"}
-      > {buttons}
+    render () {
+      return (
+        <div class='circle-container' style={{right:"11px"}}>
+          <a href='#' class='center'
+            style={{width:"300px",height:"300px"}}
+          >
+          <Image 
+            onClick={this.toggleExpanded.bind(this)}
+            src= {process.env.PUBLIC_URL + '/static/me_cropped.jpg'} 
+            style={{display:"inline-block", 
+            // alignItems:"center", valign:"middle",
+            width:"300px",height:"300px",
+            maxWidth:"1000%",
+            right:"110px", bottom:"113px"}} 
+            circular 
+          />
+          </a>
+          {this.state.isExpanded && <a href='https://github.com/kyleip' class='deg0'>
+            <Button circular icon='big github'class='deg0' 
+              style={{...buttonStyle,backgroundColor:'#E24E42'}}
+            />
+          </a>}
+          {this.state.isExpanded && <a href='/funstuff' class='deg45'>
+            <Button circular icon='big music' 
+              style={{...buttonStyle,backgroundColor:'#E9B000'}}
+            />
+          </a>}
+          {this.state.isExpanded && <a href='/projects' class='deg135'>
+            <Button circular icon='big coffee' 
+              style={{...buttonStyle,backgroundColor:'#94618E'}}
+            />
+          </a>}
+          {this.state.isExpanded && <a href='http://localhost:5000/resume' class='deg180'>
+            <Button circular icon='big sticky note outline' 
+              style={{...buttonStyle,backgroundColor:'#57BC90'}}
+            />
+          </a>}
+          {this.state.isExpanded && <a href='https://www.linkedin.com/in/kyleip' class='deg225'>
+            <Button circular icon='big linkedin alternate' 
+              style={{...buttonStyle,backgroundColor:'#4EC5C1'}}
+            />
+          </a>}
+          {this.state.isExpanded && <a href='/about' class='deg315'>
+            <Button circular icon='big question circle' 
+              style={{...buttonStyle,backgroundColor:'#EB6E80'}}
+            />
+          </a>}
       </div>
-    ); 
-  }
+      )
+    }
+}
+
+ const buttonStyle = {
+  height:'75px',
+  width:'75px',
+  color:'white',
   
-  const MenuToggle = ({
-    toggle, 
-    open, 
-    animateButtons
-  }) => (
-    <button 
-      className={open 
-        ? "menu-toggle toggle-open" 
-        : "menu-toggle toggle-closed"}
-      onClick={() => {
-        toggle(); 
-        setTimeout(
-          animateButtons, 
-          120
-        );
-      }}
-    > <i className={open 
-           ? "fa fa-times"
-           : "fa fa-bars"}
-         aria-hidden="true"
-      ></i>
-    </button>
-  );
+ }
+
+ const redButton = [buttonStyle, {backgroundColor:'#E24E42'}]
