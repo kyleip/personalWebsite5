@@ -17,11 +17,11 @@ export class Projects extends Component {
             <p style={{...paragraphStyle,marginLeft: '5em'}}> 
             Be sure to check frequently for updates!
             </p>
-            <Link to='/'>
+            {/* <Link to='/'>
               <Button circular icon='big left arrow' 
                 style={{...buttonStyle,backgroundColor:'#57BC90'}}
               />
-            </Link>
+            </Link> */}
         </div>
     )
   }

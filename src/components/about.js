@@ -27,11 +27,11 @@ export class About extends Component {
             <p style={{...paragraphStyle,marginLeft: '5em'}}> 
             Feel free to hit the back button and continue exploring! 
             </p>
-            <Link to='/'>
+            {/* <Link to='/'>
                 <Button circular icon='big left arrow' 
                 style={{...buttonStyle,backgroundColor:'#4EC5C1'}}
                 />
-            </Link>
+            </Link> */}
         </div>
     )
   }
