@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './funstuff.css';
-import { Button } from 'semantic-ui-react';
+import { Button, Transition} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 
 export class Funstuff extends Component {
@@ -8,15 +8,16 @@ export class Funstuff extends Component {
   render() {
     return (
         <div>
+            <p style={{...paragraphStyle,textAlign:'center',color:'#E9B000'}}>Scroll down!</p>
             <p style={titleStyle}>Fun Stuff!</p>
             <ColoredLine color="#94618E" />
-            <p style={paragraphStyle}> 
+            <p style={{...paragraphStyle,marginLeft: '5em'}}> 
             Believe it or not, I like things other than coding!
             Some of my hobbies are photography, playing the trumpet in my college pep band, 
             listening to music, and swimming. I will post some links here so that you can 
             check it out!
             </p>
-            <p style={paragraphStyle}> 
+            <p style={{...paragraphStyle,marginLeft: '5em'}}> 
             Be sure to check frequently for updates!
             </p>
             <Link to='/'>
@@ -31,7 +32,6 @@ export class Funstuff extends Component {
 
   
 const titleStyle = {
-  color: 'black',
   backgroundColor: 'white',
   fontSize: '50px',
   fontFamily: 'Oleo Script',
@@ -48,9 +48,8 @@ const paragraphStyle = {
   fontSize: '15px',
   fontFamily: 'Open Sans',
   textAlign: 'left',
-  marginLeft: '150px',
   marginTop: '30px',
-  marginRight: '100px'
+  marginRight: '1em'
 }
 
 const ColoredLine = ({ color }) => (

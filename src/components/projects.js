@@ -8,12 +8,13 @@ export class Projects extends Component {
   render() {
     return (
         <div>
+            <p style={{...paragraphStyle,textAlign:'center',color:'#E24E42'}}>Scroll down!</p>
             <p style={titleStyle}>Projects</p>
             <ColoredLine color="#57BC90" />
-            <p style={paragraphStyle}> 
+            <p style={{...paragraphStyle,marginLeft: '5em'}}>  
             This is a page where I'll post demos of the previous projects that I've done.
             </p>
-            <p style={paragraphStyle}> 
+            <p style={{...paragraphStyle,marginLeft: '5em'}}> 
             Be sure to check frequently for updates!
             </p>
             <Link to='/'>
@@ -28,7 +29,6 @@ export class Projects extends Component {
 
   
 const titleStyle = {
-  color: 'black',
   backgroundColor: 'white',
   fontSize: '50px',
   fontFamily: 'Oleo Script',
@@ -45,9 +45,8 @@ const paragraphStyle = {
   fontSize: '15px',
   fontFamily: 'Open Sans',
   textAlign: 'left',
-  marginLeft: '150px',
   marginTop: '30px',
-  marginRight: '100px'
+  marginRight: '1em'
 }
 
 const ColoredLine = ({ color }) => (

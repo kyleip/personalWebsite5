@@ -35,14 +35,13 @@ class App extends Component {
       
       <div className="App">
       <BrowserRouter>
-        {/* <Title/> */}
-
-        <Switch>
-          <Route exact path="/" component={Title} />
-          <Route exact path='/about' component={About}/>
-          <Route exact path='/funstuff' component={Funstuff}/>
-          <Route exact path='/projects' component={Projects}/>
-        </Switch>
+        <div>
+          <Title/>
+          {/* <Route exact path="/" component={Title} /> */}
+          <Route path='/about' component={About}/>
+          <Route path='/funstuff' component={Funstuff}/>
+          <Route path='/projects' component={Projects}/>
+        </div>
       </BrowserRouter>
       </div>
     );
