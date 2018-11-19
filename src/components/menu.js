@@ -108,7 +108,7 @@ export default class Menu extends Component {
           <Popup content="Resume" trigger = {
           <Link to='/resume' class='deg135'>
             <Transition animation='slide left' duration='1000' visible={this.state.isExpanded}>
-            <Button circular icon='big sticky note outline ' 
+            <Button circular icon='big file pdf ' 
                 style={{...buttonStyle,backgroundColor:'#94618E'}}
                 onMouseEnter = { () => {
                   this.handleColorChangeHelper('#94618E','#E9B000')
@@ -132,7 +132,7 @@ export default class Menu extends Component {
           <Popup content="LinkedIn" trigger = {
           <a href='https://www.linkedin.com/in/kyleip' class='deg225'>
           <Transition animation='slide left' duration='1000' visible={this.state.isExpanded}>
-            <Button circular icon='big linkedin' 
+            <Button circular icon='big suitcase' 
                 style={{...buttonStyle,backgroundColor:'#4EC5C1'}}
                 onMouseEnter = { () => {
                   this.handleColorChangeHelper('#4EC5C1','#EB6E80')
