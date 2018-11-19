@@ -59,7 +59,7 @@ export default class Menu extends Component {
             circular 
           />
           </Link>
-          <Popup content="Projects" trigger = {
+          {this.state.isExpanded && <Popup content="Projects" trigger = {
           <Link to='/projects' class='deg0'>
             <Transition animation='slide right' duration='1000' visible={this.state.isExpanded}>
               <Button circular icon='big coffee'
@@ -70,8 +70,8 @@ export default class Menu extends Component {
               />
             </Transition>
           </Link>}
-          />
-          <Popup content="Fun Stuff!" trigger = {
+          />}
+          {this.state.isExpanded && <Popup content="Fun Stuff!" trigger = {
           <Link to='/funstuff' class='deg45'>
             <Transition animation='slide right' duration='1000' visible={this.state.isExpanded}>
               <Button circular icon='big music' 
@@ -82,9 +82,9 @@ export default class Menu extends Component {
               />
               </Transition>
           </Link>}
-          />
-          <Popup content="Resume" trigger = {
-          <a href='http://127.0.0.1:5000/resume' class='deg135'>
+          />}
+          {this.state.isExpanded && <Popup content="Resume" trigger = {
+          <a href='http://18.188.202.118/resume' class='deg135'>
             <Transition animation='slide left' duration='1000' visible={this.state.isExpanded}>
               <Button circular icon='big sticky note outline ' 
                 style={{...buttonStyle,backgroundColor:'#94618E'}}
@@ -94,8 +94,8 @@ export default class Menu extends Component {
               />
             </Transition>
           </a>}
-          />
-          <Popup content="Github" trigger = {
+          />}
+          {this.state.isExpanded && <Popup content="Github" trigger = {
           <a href='https://github.com/kyleip' class='deg180'>
             <Transition animation='slide left' duration='1000' visible={this.state.isExpanded}>
               <Button circular icon='big github' 
@@ -106,8 +106,8 @@ export default class Menu extends Component {
               />
             </Transition>
           </a>}
-          />
-          <Popup content="LinkedIn" trigger = {
+          />}
+          {this.state.isExpanded && <Popup content="LinkedIn" trigger = {
           <a href='https://www.linkedin.com/in/kyleip' class='deg225'>
             <Transition animation='slide left' duration='1000' visible={this.state.isExpanded}>
               <Button circular icon='big linkedin' 
@@ -118,8 +118,8 @@ export default class Menu extends Component {
               />
             </Transition>
           </a>}
-          />
-          <Popup content="About" trigger = {
+          />}
+          {this.state.isExpanded && <Popup content="About" trigger = {
           <Link to='/about' class='deg315'>
             <Transition animation='slide right' duration='1000' visible={this.state.isExpanded}>
               <Button circular icon='big question circle' 
@@ -130,7 +130,7 @@ export default class Menu extends Component {
               />
               </Transition>
           </Link>}
-          />
+          />}
       </div>
       )
     }
