@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './projects.css';
-import { Button } from 'semantic-ui-react';
-import {Link} from 'react-router-dom';
 
 export class Projects extends Component {
 
@@ -58,14 +56,14 @@ const ColoredLine = ({ color }) => (
   />
 );
 
-const buttonStyle = {
-  height:'75px',
-  width:'75px',
-  color:'#E24E42',
-  float: 'left',
-  marginLeft:'50px',
-  marginTop:'30px'
- }
+// const buttonStyle = {
+//   height:'75px',
+//   width:'75px',
+//   color:'#E24E42',
+//   float: 'left',
+//   marginLeft:'50px',
+//   marginTop:'30px'
+//  }
 
 
 export default Projects;

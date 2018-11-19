@@ -6,6 +6,7 @@ import About from './components/about';
 import Funstuff from './components/funstuff';
 import Projects from './components/projects';
 import Title from './components/title';
+import Resume from './components/resume';
 
 class App extends Component {
   state = {
@@ -41,6 +42,7 @@ class App extends Component {
           <Route path='/about' component={About}/>
           <Route path='/funstuff' component={Funstuff}/>
           <Route path='/projects' component={Projects}/>
+          <Route path='/resume' component={Resume}/>
         </div>
       </BrowserRouter>
       </div>

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './funstuff.css';
+import { Button, Transition} from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
 
-export class Funstuff extends Component {
+export class Resume extends Component {
 
   render() {
     return (
@@ -59,4 +61,14 @@ const ColoredLine = ({ color }) => (
   />
 );
 
-export default Funstuff;
+const buttonStyle = {
+  height:'75px',
+  width:'75px',
+  color:'#E9B000',
+  float: 'left',
+  marginLeft:'50px',
+  marginTop:'30px'
+ }
+
+
+export default Resume;
