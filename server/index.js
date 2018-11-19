@@ -32,4 +32,4 @@ app.get('/resume', (req,res) => {
 //   res.sendFile(__dirname + '/static/projects.html');
 // })
 
-app.listen(port, 'localhost', () => console.log(`Listening on port ${port}`));
+app.listen(port, '0.0.0.0', () => console.log(`Listening on port ${port}`));
