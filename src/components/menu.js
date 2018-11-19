@@ -108,7 +108,7 @@ export default class Menu extends Component {
           </Link>}
           />
           <Popup content="Resume" trigger = {
-          <a href='http://localhost:5000/resume' class='deg135'>
+          <a href='http://18.188.202.118:5000/resume' class='deg135'>
             <Transition animation='slide left' duration='1000' visible={this.state.isExpanded}>
             <Button circular icon='big sticky note outline ' 
                 style={{...buttonStyle,backgroundColor:'#94618E'}}
