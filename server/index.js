@@ -12,6 +12,10 @@ app.use(express.static('public'));
 //   res.sendFile('../public/static/me_cropped.jpg');
 // })
 
+app.get('/api/hello', (req, res) => {
+  res.send({ express: 'Hello From Express' });
+});
+
 app.get('/resume', (req,res) => {
   res.sendFile(__dirname + '/static/kyle-ip-resume.pdf');
 })
