@@ -118,7 +118,7 @@ export default class Menu extends Component {
           </Link>}
           /> 
           <Popup content="Github" trigger = {
-          <a href='https://github.com/kyleip' class='deg180'>
+          <Link to='/github' class='deg180'>
             <Transition animation='slide left' duration='1000' visible={this.state.isExpanded}>
             <Button circular icon='big github' 
                 style={{...buttonStyle,backgroundColor:'#57BC90'}}
@@ -127,10 +127,10 @@ export default class Menu extends Component {
                 }}
               />
             </Transition>
-          </a>
+          </Link>
           }/>
           <Popup content="LinkedIn" trigger = {
-          <a href='https://www.linkedin.com/in/kyleip' class='deg225'>
+          <Link to='/linkedin' class='deg225'>
           <Transition animation='slide left' duration='1000' visible={this.state.isExpanded}>
             <Button circular icon='big suitcase' 
                 style={{...buttonStyle,backgroundColor:'#4EC5C1'}}
@@ -139,7 +139,7 @@ export default class Menu extends Component {
                 }}
               />
             </Transition>
-          </a>
+          </Link>
           }/>
           <Popup content="About" trigger = {
           <Link to='/about' class='deg315'>

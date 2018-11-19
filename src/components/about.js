@@ -23,7 +23,7 @@ export class About extends Component {
             for it <a href='https://github.com/kyleip/personalWebsite5'> here </a>.
             </p>
             <p style={{...paragraphStyle,marginLeft: '5em'}}> 
-            Feel free to hit the back button and continue exploring! 
+            Feel free to hit any other buttons and continue exploring! 
             </p>
             {/* <Link to='/'>
                 <Button circular icon='big left arrow' 
