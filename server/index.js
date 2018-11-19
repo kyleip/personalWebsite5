@@ -16,4 +16,16 @@ app.get('/resume', (req,res) => {
   res.sendFile(__dirname + '/static/kyle-ip-resume.pdf');
 })
 
+app.get('/funstuff', (req,res) => {
+  res.sendFile(__dirname + '/static/funstuff.html');
+})
+
+app.get('/about', (req,res) => {
+  res.sendFile(__dirname + '/static/about.html');
+})
+
+app.get('/projects', (req,res) => {
+  res.sendFile(__dirname + '/static/projects.html');
+})
+
 app.listen(port, () => console.log(`Listening on port ${port}`));

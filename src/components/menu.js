@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Button, Image } from 'semantic-ui-react';
-import './menu.css'
+import './menu.css';
+import {Link} from 'react-router-dom';
 
 
 export default class Menu extends Component {
@@ -19,7 +20,7 @@ export default class Menu extends Component {
     render () {
       return (
         <div class='circle-container' style={{right:"11px"}}>
-          <a href='#' class='center'
+          <Link to='/' class='center'
             style={{width:"300px",height:"300px"}}
           >
           <Image 
@@ -32,37 +33,37 @@ export default class Menu extends Component {
             right:"110px", bottom:"113px"}} 
             circular 
           />
-          </a>
-          {this.state.isExpanded && <a href='https://github.com/kyleip' class='deg0'>
-            <Button circular icon='big github'class='deg0' 
+          </Link>
+          {this.state.isExpanded && <Link to='/projects' class='deg0'>
+            <Button circular icon='big coffee'
               style={{...buttonStyle,backgroundColor:'#E24E42'}}
             />
-          </a>}
-          {this.state.isExpanded && <a href='/funstuff' class='deg45'>
+          </Link>}
+          {this.state.isExpanded && <Link to='/funstuff' class='deg45'>
             <Button circular icon='big music' 
               style={{...buttonStyle,backgroundColor:'#E9B000'}}
             />
-          </a>}
-          {this.state.isExpanded && <a href='/projects' class='deg135'>
-            <Button circular icon='big coffee' 
+          </Link>}
+          {this.state.isExpanded && <a href='http://localhost:5000/resume' class='deg135'>
+            <Button circular icon='big sticky note outline ' 
               style={{...buttonStyle,backgroundColor:'#94618E'}}
             />
           </a>}
-          {this.state.isExpanded && <a href='http://localhost:5000/resume' class='deg180'>
-            <Button circular icon='big sticky note outline' 
+          {this.state.isExpanded && <a href='https://github.com/kyleip' class='deg180'>
+            <Button circular icon='big github' 
               style={{...buttonStyle,backgroundColor:'#57BC90'}}
             />
           </a>}
           {this.state.isExpanded && <a href='https://www.linkedin.com/in/kyleip' class='deg225'>
-            <Button circular icon='big linkedin alternate' 
+            <Button circular icon='big linkedin' 
               style={{...buttonStyle,backgroundColor:'#4EC5C1'}}
             />
           </a>}
-          {this.state.isExpanded && <a href='/about' class='deg315'>
+          {this.state.isExpanded && <Link to='/about' class='deg315'>
             <Button circular icon='big question circle' 
               style={{...buttonStyle,backgroundColor:'#EB6E80'}}
             />
-          </a>}
+          </Link>}
       </div>
       )
     }
@@ -72,7 +73,4 @@ export default class Menu extends Component {
   height:'75px',
   width:'75px',
   color:'white',
-  
  }
-
- const redButton = [buttonStyle, {backgroundColor:'#E24E42'}]
