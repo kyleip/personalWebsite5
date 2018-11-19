@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import  './semantic/dist/semantic.min.css';
+// import './semantic/dist/semantic.min.js';
 // import './font-awesome/css/font-awesome.min.css';
 
 

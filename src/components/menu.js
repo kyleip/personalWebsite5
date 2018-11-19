@@ -3,7 +3,6 @@ import { Button,Image, Popup, Transition} from 'semantic-ui-react';
 import './menu.css';
 import {Link} from 'react-router-dom';
 
-
 // import About from './about';
 // import Funstuff from './funstuff';
 // import Projects from './projects';
@@ -45,7 +44,6 @@ export default class Menu extends Component {
         isHovered: true,
         textComponent: component
       });
-      console.log('yo', this.state);
     }
     
     render () {
@@ -108,7 +106,7 @@ export default class Menu extends Component {
           </Link>}
           />
           <Popup content="Resume" trigger = {
-          <a href='http://18.188.202.118:5000/resume' class='deg135'>
+          <Link to='/resume' class='deg135'>
             <Transition animation='slide left' duration='1000' visible={this.state.isExpanded}>
             <Button circular icon='big sticky note outline ' 
                 style={{...buttonStyle,backgroundColor:'#94618E'}}
@@ -117,7 +115,7 @@ export default class Menu extends Component {
                 }}
               />
             </Transition>
-          </a>}
+          </Link>}
           /> 
           <Popup content="Github" trigger = {
           <a href='https://github.com/kyleip' class='deg180'>

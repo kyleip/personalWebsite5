@@ -47,7 +47,8 @@ const paragraphStyle = {
   fontFamily: 'Open Sans',
   textAlign: 'left',
   marginTop: '30px',
-  marginRight: '1em'
+  marginRight: '1em',
+  marginBottom: '5em'
 }
 
 const ColoredLine = ({ color }) => (
