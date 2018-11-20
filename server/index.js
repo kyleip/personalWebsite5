@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -7,6 +8,7 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'build')));
 
 // app.get('/api/profile_picture', (res) => {
 //   res.sendFile('../public/static/me_cropped.jpg');
@@ -19,6 +21,10 @@ app.get('/api/hello', (req, res) => {
 app.get('/resume', (req,res) => {
   res.sendFile(__dirname + '/static/kyle-ip-resume.pdf');
 })
+
+app.get('/', function (req, res) {
+   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+ });
 
 // app.get('/funstuff', (req,res) => {
 //   res.sendFile(__dirname + '/static/funstuff.html');
