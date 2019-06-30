@@ -1,7 +1,8 @@
-FROM node:8.11.1
+FROM node:8.11.1-alpine
 
 # set working directory
-RUN mkdir /usr/src/app
+USER root
+RUN mkdir -p /usr/src/app
 RUN mkdir /usr/src/app/server
 RUN mkdir /usr/src/app/public
 RUN mkdir /usr/src/app/build
@@ -17,8 +18,8 @@ COPY build /usr/src/app/build
 COPY public /usr/src/app/public
 RUN npm install 
 RUN npm install react-scripts@1.1.1 -g 
-RUN apt-get update
-RUN apt-get install xsel
+# RUN apt-get update
+# RUN apt-get install xsel
 
 # start app
 # RUN node server/index.js

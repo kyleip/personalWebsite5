@@ -2,24 +2,28 @@ import React, { Component } from 'react';
 import './projects.css';
 
 export class Projects extends Component {
-
+  scrollToBottom = () => {
+    this.newInfo.scrollIntoView({ behavior: "smooth" });
+  }
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+  
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
   render() {
     return (
         <div>
-            <p style={{...paragraphStyle,textAlign:'center',color:'#E24E42'}}>Scroll down!</p>
             <p style={titleStyle}>Projects</p>
             <ColoredLine color="#57BC90" />
-            <p style={{...paragraphStyle,marginLeft: '5em'}}>  
+            <p style={{...paragraphStyle,marginLeft: '20em'}}>  
             This is a page where I'll post demos of the previous projects that I've done.
             </p>
-            <p style={{...paragraphStyle,marginLeft: '5em'}}> 
-            Be sure to check frequently for updates!
-            </p>
-            {/* <Link to='/'>
-              <Button circular icon='big left arrow' 
-                style={{...buttonStyle,backgroundColor:'#57BC90'}}
-              />
-            </Link> */}
+
+            <div style={{ float:"left", clear: "both" }}
+             ref={(el) => { this.newInfo = el; }}>
+            </div>
         </div>
     )
   }
@@ -32,7 +36,8 @@ const titleStyle = {
   fontFamily: 'Oleo Script',
   marginBottom: '0px',
   textAlign: 'left',
-  marginLeft: '50px',
+  marginLeft: '15rem',
+  marginRight: '15rem',
   marginTop: '40px',
   color: '#E24E42'
 }
@@ -44,7 +49,7 @@ const paragraphStyle = {
   fontFamily: 'Open Sans',
   textAlign: 'left',
   marginTop: '30px',
-  marginRight: '1em',
+  marginRight: '15rem',
   marginBottom: '5em'
 }
 
@@ -52,7 +57,9 @@ const ColoredLine = ({ color }) => (
   <hr
       style={{
           backgroundColor: color,
-          height: 5
+          height: 5,
+          marginLeft: '12rem',
+          marginRight: '12rem',
       }}
   />
 );

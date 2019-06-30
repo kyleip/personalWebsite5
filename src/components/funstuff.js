@@ -2,27 +2,32 @@ import React, { Component } from 'react';
 import './funstuff.css';
 
 export class Funstuff extends Component {
+  scrollToBottom = () => {
+    this.newInfo.scrollIntoView({ behavior: "smooth" });
+  }
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+  
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
 
   render() {
     return (
         <div>
-            <p style={{...paragraphStyle,textAlign:'center',color:'#E9B000'}}>Scroll down!</p>
             <p style={titleStyle}>Fun Stuff!</p>
             <ColoredLine color="#94618E" />
-            <p style={{...paragraphStyle,marginLeft: '5em'}}> 
+            <p style={{...paragraphStyle,marginLeft: '20em'}}> 
             Believe it or not, I like things other than coding!
             Some of my hobbies are photography, playing the trumpet in my college pep band, 
             listening to music, and swimming. I will post some links here so that you can 
             check it out!
             </p>
-            <p style={{...paragraphStyle,marginLeft: '5em'}}> 
-            Be sure to check frequently for updates!
-            </p>
-            {/* <Link to='/'>
-              <Button circular icon='big left arrow' 
-                style={{...buttonStyle,backgroundColor:'#94618E'}}
-              />
-            </Link> */}
+            
+            <div style={{ float:"left", clear: "both" }}
+             ref={(el) => { this.newInfo = el; }}>
+            </div>
         </div>
     )
   }
@@ -35,7 +40,8 @@ const titleStyle = {
   fontFamily: 'Oleo Script',
   marginBottom: '0px',
   textAlign: 'left',
-  marginLeft: '50px',
+  marginLeft: '15rem',
+  marginRight: '15rem',
   marginTop: '40px',
   color: '#E9B000'
 }
@@ -47,7 +53,7 @@ const paragraphStyle = {
   fontFamily: 'Open Sans',
   textAlign: 'left',
   marginTop: '30px',
-  marginRight: '1em',
+  marginRight: '15rem',
   marginBottom: '5em'
 }
 
@@ -55,7 +61,9 @@ const ColoredLine = ({ color }) => (
   <hr
       style={{
           backgroundColor: color,
-          height: 5
+          height: 5,
+          marginLeft: '12rem',
+          marginRight: '12rem',
       }}
   />
 );

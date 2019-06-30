@@ -52,15 +52,18 @@ export default class Menu extends Component {
       var right = '110px';
       var bottom = '113px';
       var marginTop = '100px';
+      var circleRight = '11px';
       if (isMobile) {
-        pixels = '150px';
-        right = '34px';
-        bottom = '40px';
-        marginTop = '0px';
+        // pixels = '250px';
+        // pixels='500px'
+        // circleRight = '-4px';
+        // right = '99px';
+      //   bottom = '40px';
+      //   marginTop = '0px';
       }
 
       return (
-        <div class='circle-container' style={{right:"11px",marginTop:marginTop,marginBottom:'1px'}}>
+        <div class='circle-container' style={{right:circleRight,marginTop:marginTop,marginBottom:'1px'}}>
           <div>
           <Link to='/' class='center'
           >
@@ -70,7 +73,7 @@ export default class Menu extends Component {
             style={{display:"inline-block", 
             width:pixels,height:pixels,
             maxWidth:"1000%",
-            right:right, bottom:bottom}} 
+            bottom:bottom,right:right}} 
             circular 
           />
           </Link>

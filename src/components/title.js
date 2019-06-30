@@ -26,9 +26,24 @@ export class Title extends Component {
       }
 
     render() {
+        const isMobile = window.innerWidth <= 500;
+        var titleStyle
+        if (isMobile){
+            titleStyle = {
+                marginTop: '50px',
+                marginBottom: '30px',
+                right: '10px'
+            }
+        } else {
+            titleStyle = {
+                marginTop: '50px',
+                 marginBottom: '30px'
+            }
+        }
+
         return (
             <div>
-                <div style={{marginTop: '50px', marginBottom: '30px'}}>
+                <div style={titleStyle}>
                     <Menu hover_handler={this.hover_handler.bind(this)}></Menu>
                 </div>
                 <TitleText titleColor={this.state.titleColor} textColor={this.state.textColor}/>

@@ -2,22 +2,32 @@ import React, { Component } from 'react';
 
 
 export class Github extends Component {
+  scrollToBottom = () => {
+    this.newInfo.scrollIntoView({ behavior: "smooth" });
+  }
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+  
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
 
   render() {
     return (
         <div>
-            <p style={{...paragraphStyle,textAlign:'center',color:'#57BC90'}}>Scroll down!</p>
             <p style={titleStyle}>Github</p>
             <ColoredLine color="#E24E42" />
-            <p style={{...paragraphStyle,marginLeft: '5em'}}> 
-              <a href = 'https://github.com/kyleip' target = "_blank">My Github</a>
+            <p style={{...paragraphStyle,marginLeft: '20em'}}> 
+              Click <a href = 'https://github.com/kyleip' target = "_blank">here</a> to view my github!
             </p>
-            <p style={{...paragraphStyle,marginLeft: '5em'}}> 
-              Click the link to view my github!
-            </p>
-            <p style={{...paragraphStyle,marginLeft: '5em'}}> 
+            <p style={{...paragraphStyle,marginLeft: '20em'}}> 
               Be sure to check frequently for updates!
             </p>
+
+            <div style={{ float:"left", clear: "both" }}
+             ref={(el) => { this.newInfo = el; }}>
+            </div>
         </div>
     )
   }
@@ -30,7 +40,8 @@ const titleStyle = {
   fontFamily: 'Oleo Script',
   marginBottom: '0px',
   textAlign: 'left',
-  marginLeft: '50px',
+  marginLeft: '15rem',
+  marginRight: '15rem',
   marginTop: '40px',
   color: '#57BC90'
 }
@@ -42,7 +53,7 @@ const paragraphStyle = {
   fontFamily: 'Open Sans',
   textAlign: 'left',
   marginTop: '30px',
-  marginRight: '1em',
+  marginRight: '15rem',
   marginBottom: '5em'
 }
 
@@ -50,7 +61,9 @@ const ColoredLine = ({ color }) => (
   <hr
       style={{
           backgroundColor: color,
-          height: 5
+          height: 5,
+          marginLeft: '12rem',
+          marginRight: '12rem',
       }}
   />
 );

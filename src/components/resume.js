@@ -3,22 +3,32 @@ import Pdf from '../static/kyle-ip-resume.pdf';
 
 
 export class Resume extends Component {
+  scrollToBottom = () => {
+    this.newInfo.scrollIntoView({ behavior: "smooth" });
+  }
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+  
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
 
   render() {
     return (
         <div>
-            <p style={{...paragraphStyle,textAlign:'center',color:'#94618E'}}>Scroll down!</p>
             <p style={titleStyle}>Resume</p>
             <ColoredLine color="#E9B000" />
-            <p style={{...paragraphStyle,marginLeft: '5em'}}> 
-              <a href = {Pdf} target = "_blank">Download Resume as PDF</a>
+            <p style={{...paragraphStyle,marginLeft: '20em'}}> 
+              Click <a href = {Pdf} target = "_blank">here </a> to view my resume!
             </p>
-            <p style={{...paragraphStyle,marginLeft: '5em'}}> 
-              Click the link to view my resume!
-            </p>
-            <p style={{...paragraphStyle,marginLeft: '5em'}}> 
+            <p style={{...paragraphStyle,marginLeft: '20em'}}> 
               Be sure to check frequently for updates!
             </p>
+
+            <div style={{ float:"left", clear: "both" }}
+             ref={(el) => { this.newInfo = el; }}>
+            </div>
         </div>
     )
   }
@@ -31,7 +41,8 @@ const titleStyle = {
   fontFamily: 'Oleo Script',
   marginBottom: '0px',
   textAlign: 'left',
-  marginLeft: '50px',
+  marginLeft: '15rem',
+  marginRight: '15rem',
   marginTop: '40px',
   color: '#94618E'
 }
@@ -43,7 +54,7 @@ const paragraphStyle = {
   fontFamily: 'Open Sans',
   textAlign: 'left',
   marginTop: '30px',
-  marginRight: '1em',
+  marginRight: '15em',
   marginBottom: '5em'
 }
 
@@ -51,7 +62,9 @@ const ColoredLine = ({ color }) => (
   <hr
       style={{
           backgroundColor: color,
-          height: 5
+          height: 5,
+          marginLeft: '12rem',
+          marginRight: '12rem',
       }}
   />
 );
